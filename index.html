@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="irasApp">
+  <head>
+     <meta charset="utf-8">
+     <title>NTRS IRAS Mobile Application</title>
+     <link rel="icon" type="image/ico" href="favicon.ico"/>
+     <meta name="viewport" content="width=device-width">
+     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+     <link rel="stylesheet" href="css/main.css">
+     </head>
+  <body>
+      <!--[if lt IE 7]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+      <!-- Add your site or application content here -->
+      <div class="container" ng-cloak>      
+        <div class="header" ng-controller="RefDateCtrl">
+          <!-- // Reference Date Drop down menu Start-->
+        <div class="dropdown pull-right" style="position:relative">
+        <a href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">{{selectedDate}} <span class="caret"></span></a>
+        
+        <reference-date></reference-date>
+
+      </div> <!-- // Reference Date Drop down menu  End-->
+
+          <h3 class="text-muted">IRAS Mobile</h3>
+          <br>
+          <h3>The derived date: <strong>{{derivedDate}}</strong></h3>
+        </div> <!-- //RefDateCtrl -->
+
+        <div ng-include="'app/views/main.html'" ng-controller="MainCtrl"></div>
+
+        <div class="footer">
+          <p><span class="glyphicon glyphicon-heart"></span> from IRAS Mobile team</p>
+        </div>
+
+      </div> <!-- //container -->
+
+      <!--[if lt IE 9]>
+        <script src="lib/es5-shim/es5-shim.js"></script>
+        <script src="lib/json3/lib/json3.min.js"></script>
+      <![endif]-->
+
+      <script src="lib/jquery/jquery-2.1.1.min.js"></script>
+      <script src="lib/angular/angular.min.js"></script>
+      <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>-->
+      <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+      <script src="lib/moment/min/moment.min.js"></script>
+      <script src="lib/angular-moment/angular-moment.js"></script>
+
+      <script src="scripts/app.js"></script>
+      <script src="app/scripts/controllers/main.js"></script>
+      <script src="app/scripts/services/refdate.js"></script>
+      <script src="scripts/dropdown.js"></script>
+  </body>
+</html>
